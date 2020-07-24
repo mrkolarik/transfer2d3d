@@ -1,5 +1,2 @@
-# UNDER CONSTRUCTION
-## Transfer learning from 2D to 3D convolutional networks for semantic segmentation using expansion methods of convolutional cores
-# TODO:
-*  Add code for weight expansion
-*  Upload code when finished - working on private Gitlab ...
+## Planar 3D Transfer Learning for End to End Unimodal MRI Unbalanced Data Segmentation
+## Code will be added after the research paper will be accepted to the ICPR  2020 conference
