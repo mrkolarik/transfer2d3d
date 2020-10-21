@@ -8,11 +8,11 @@ Most useful parts of this repository are python keras scripts with source code f
 ## Overview
 
 <p align="center">
-  <img height="300" src="img/abstract.png"> <br>
+  <img width="600" src="img/abstract.png"> <br>
 </p>
 
 <p align="center">
-  <img height="450" src="img/architecture.PNG"> <br>
+  <img width="1200" src="img/architecture.PNG"> <br>
 </p>
 
 ## How to use
