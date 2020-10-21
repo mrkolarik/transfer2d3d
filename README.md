@@ -8,11 +8,13 @@ Most useful parts of this repository are python keras scripts with source code f
 ## Overview
 
 <p align="center">
-  <img width="350" src="img/abstract.png"> <br>
+  <img width="350" src="img/planar3d.PNG"> <br>
+  <b>Figure_1:</b> Visualisation of 2D → Planar 3D convolutional kernel transformation
 </p>
 
 <p align="center">
   <img width="1200" src="img/architecture.PNG"> <br>
+  <b>Figure_2:</b> Architecture of the proposed planar 3D res-u-net with VGG-16 planar 3D encoder
 </p>
 
 ## How to use
