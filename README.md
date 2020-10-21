@@ -8,7 +8,7 @@ Most useful parts of this repository are python keras scripts with source code f
 ## Overview
 
 <p align="center">
-  <img width="600" src="img/abstract.png"> <br>
+  <img width="350" src="img/abstract.png"> <br>
 </p>
 
 <p align="center">
