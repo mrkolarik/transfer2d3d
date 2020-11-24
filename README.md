@@ -18,11 +18,6 @@ Most useful parts of this repository are python keras scripts with source code f
   <b>Figure_2:</b> Architecture of the proposed planar 3D res-u-net with VGG-16 planar 3D encoder
 </p>
 
-## How to use
-TODO
-
-### Applying on your own data
-TODO
 
 ### Reproducing the paper results
 1) Get the data - here is a link to subscribe to the MSSEG 16 challenge, data will be available after manual verification of your team by organizers:
@@ -108,6 +103,11 @@ Calculated Specificity 0.9994186303613052
 Calculated Sensitivity 0.624245195852427
 ------------------------------
 ```
+## How to use
+TODO
+
+### Applying on your own data
+TODO
 
 ## Citation and references
 
