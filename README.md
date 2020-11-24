@@ -28,7 +28,11 @@ https://portal.fli-iam.irisa.fr/msseg-challenge/overview
 ./msseg/Unprocessed training dataset/TrainingDataset_MSSEG/01016SACH/3DFLAIR.nii.gz
 ```
 
-3.  Run the nifti_to_png.py to generate png processed dataset. The conda environment can be created by running: 
+3.  Run the script:
+```bash
+nifti_to_png.py
+```
+to generate png processed dataset. The conda environment can be created by running: 
 ```bash
 conda create --name planar3d --file environment.txt
 ```
@@ -74,7 +78,7 @@ this command creates an Anaconda environment called "planar3d" and installs all 
 │   └── ./train_scans/08031SEVE
 ```
 
-5.  Run the 
+5.  Run the script: 
 ```bash
 data_load.py 
 ```
@@ -84,13 +88,13 @@ to load the png files to numpy ready for neural network input.
 https://drive.google.com/file/d/1Dq4Q6u0ghqAmiNcdFBvML7-fVzQMj2Hu/view?usp=sharing
 and copy them to the ./weights directory
 
-7.  Run the 
+7.  Run the script:
 ```bash
 original_paper_reproduction.py
 ```
 to generate predictions
 
-8.  Run the 
+8.  Run the script:
 ```bash
 evaluate_predictions.py
 ```
