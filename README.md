@@ -20,21 +20,21 @@ Most useful parts of this repository are python keras scripts with source code f
 
 
 ### Reproducing the paper results
-1) Get the data - here is a link to subscribe to the MSSEG 16 challenge, data will be available after manual verification of your team by organizers:
+1.  Get the data - here is a link to subscribe to the MSSEG 16 challenge, data will be available after manual verification of your team by organizers:
 https://portal.fli-iam.irisa.fr/msseg-challenge/overview
 
-2) Download the Unprocessed training dataset and unzip it to the ./msseg folder in the root directory. The path to the first Flair scan should be from the root:
+2.  Download the Unprocessed training dataset and unzip it to the ./msseg folder in the root directory. The path to the first Flair scan should be from the root:
 ```bash
 ./msseg/Unprocessed training dataset/TrainingDataset_MSSEG/01016SACH/3DFLAIR.nii.gz
 ```
 
-3) Run the nifti_to_png.py to generate png processed dataset. The conda environment can be created by running: 
+3.  Run the nifti_to_png.py to generate png processed dataset. The conda environment can be created by running: 
 ```bash
 conda create --name planar3d --file environment.txt
 ```
 this command creates an Anaconda environment called "planar3d" and installs all the necessary packages. If there will be any packages missing, install them via pip and let us know, we will update the Readme.
 
-4) Divide the dataset to the training / test set by copying the folders from data/png/scans and data/png/masks to the corresponding folders data/train_scans - data/train_masks - data/test_scans - data/test_masks. The description of which scans were used as the test scans in each crossvalidation round can be found in the short acoompanying paper to our main ICPR publication. In the first round of crossvalidation the data was divided like this:
+4.  Divide the dataset to the training / test set by copying the folders from data/png/scans and data/png/masks to the corresponding folders data/train_scans - data/train_masks - data/test_scans - data/test_masks. The description of which scans were used as the test scans in each crossvalidation round can be found in the short acoompanying paper to our main ICPR publication. In the first round of crossvalidation the data was divided like this:
 
 ```bash
 ./data/
@@ -74,23 +74,23 @@ this command creates an Anaconda environment called "planar3d" and installs all 
 │   └── ./train_scans/08031SEVE
 ```
 
-5) Run the 
+5.  Run the 
 ```bash
 data_load.py 
 ```
 to load the png files to numpy ready for neural network input.
 
-6) Download the weights from the 1st round of crossvalidation here:
+6.  Download the weights from the 1st round of crossvalidation here:
 https://drive.google.com/file/d/1Dq4Q6u0ghqAmiNcdFBvML7-fVzQMj2Hu/view?usp=sharing
 and copy them to the ./weights directory
 
-7) Run the 
+7.  Run the 
 ```bash
 original_paper_reproduction.py
 ```
 to generate predictions
 
-8) Run the 
+8.  Run the 
 ```bash
 evaluate_predictions.py
 ```
