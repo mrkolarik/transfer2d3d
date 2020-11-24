@@ -2,7 +2,7 @@
 ## for End to End Unimodal MRI Unbalanced Data Segmentation
 ## Utilizing 2D pre-trained weights in 3D segmentation with application on multiple sclerosis lesion segmentation
 
-Hello everyone, this is a repository containing code to Paper "Planar 3D Transfer Learning for End to End Unimodal MRI Unbalanced Data Segmentation" soon to be published (accepted) to ICPR 2020. Pre-print Arxive version here: https://arxiv.org/abs/2011.11557
+Hello everyone, this is a repository containing code to Paper "Planar 3D Transfer Learning for End to End Unimodal MRI Unbalanced Data Segmentation" soon to be published (accepted) to ICPR 2020. Pre-print Arxiv version here: https://arxiv.org/abs/2011.11557
 
 Most useful parts of this repository are python keras scripts with source code for generating planar 3D weights for 2D to 3D transfer learning.
 
