@@ -1,6 +1,7 @@
 __pycache__
 .idea
+msseg
+data
 .~lock*
 !.gitkeep
 !*.py
-

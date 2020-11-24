@@ -58,11 +58,11 @@ def create_train_data():
     print('Creating training images...')
     print('-'*30)
     for dirr in sorted(os.listdir(train_data_path)):
-        if not os.path.isdir(dirr):
-            continue
         j = 0
         print(dirr)
         dirr = os.path.join(train_data_path, dirr)
+        if not os.path.isdir(dirr):
+            continue
         images = sorted(os.listdir(dirr))
         count = array_depth
         for image_name in images:
@@ -88,10 +88,10 @@ def create_train_data():
 
     i = 0
     for dirr in sorted(os.listdir(train_data_path)):
-        if not os.path.isdir(dirr):
-            continue
         j = 0
         dirr = os.path.join(mask_data_path, dirr)
+        if not os.path.isdir(dirr):
+            continue
         images = sorted(os.listdir(dirr))
         count = array_depth
         for mask_name in images:
@@ -233,10 +233,10 @@ def create_test_data():
 
     i = 0
     for dirr in sorted(os.listdir(test_data_path)):
-        if not os.path.isdir(dirr):
-            continue
         j = 0
         dirr = os.path.join(test_data_path, dirr)
+        if not os.path.isdir(dirr):
+            continue
         images = sorted(os.listdir(dirr))
         count = array_depth
         for image_name in images:
@@ -334,10 +334,10 @@ def create_reference_data():
 
     i = 0
     for dirr in sorted(os.listdir(test_data_path)):
-        if not os.path.isdir(dirr):
-            continue
         j = 0
         dirr = os.path.join(test_data_path, dirr)
+        if not os.path.isdir(dirr):
+            continue
         images = sorted(os.listdir(dirr))
         count = array_depth
         for image_name in images:
@@ -480,29 +480,31 @@ def visualise_predicitons(imgs, project_name):
 
     # ----------------------- Normalize between 0 - 255 and apply median filter --------------------
 
-    pred_dir = 'preds/'
-    if not os.path.exists(pred_dir):
-        os.mkdir(pred_dir)
-    pred_dir = os.path.join('preds/', project_name + '_nofilter')
-    if not os.path.exists(pred_dir):
-        os.mkdir(pred_dir)
+    # pred_dir = 'preds/'
+    # if not os.path.exists(pred_dir):
+    #     os.mkdir(pred_dir)
+    # pred_dir = os.path.join('preds/', project_name + '_nofilter')
+    # if not os.path.exists(pred_dir):
+    #     os.mkdir(pred_dir)
+
+
+
+    # # ----------------------- Create pred images --------------------
+    # count_processed = 0
+    #
+    # for x in range(0, imgs_pred_output.shape[0]):
+    #     imsave(os.path.join(pred_dir, 'pred_' + str(f"{count_processed:03}") + '.png'), imgs_pred_output[x],
+    #            check_contrast=False)
+    #     count_processed += 1
+    #     if (count_processed % 100) == 0:
+    #         print('Done: {0}/{1} test images'.format(count_processed, imgs_pred_output.shape[0]))
+
+    # print('-' * 30)
+    # print('Prediction nofilter finished')
+    # print('-' * 30)
 
     imgs_pred_output = (imgs_pred_output * 255.).astype(np.uint8)
 
-
-    # ----------------------- Create pred images --------------------
-    count_processed = 0
-
-    for x in range(0, imgs_pred_output.shape[0]):
-        imsave(os.path.join(pred_dir, 'pred_' + str(f"{count_processed:03}") + '.png'), imgs_pred_output[x],
-               check_contrast=False)
-        count_processed += 1
-        if (count_processed % 100) == 0:
-            print('Done: {0}/{1} test images'.format(count_processed, imgs_pred_output.shape[0]))
-
-    print('-' * 30)
-    print('Prediction nofilter finished')
-    print('-' * 30)
 
     threshold = imgs_pred_output.max() // 16
     imgs_pred_output[imgs_pred_output < threshold] = 0
@@ -511,7 +513,7 @@ def visualise_predicitons(imgs, project_name):
     pred_dir = 'preds/'
     if not os.path.exists(pred_dir):
         os.mkdir(pred_dir)
-    pred_dir = os.path.join('preds/', project_name + '_threshold')
+    pred_dir = os.path.join('preds/', project_name)
     if not os.path.exists(pred_dir):
         os.mkdir(pred_dir)
 
@@ -562,7 +564,7 @@ def visualise_predicitons(imgs, project_name):
 
 
 if __name__ == '__main__':
-    create_train_data()
+    # create_train_data()
     create_reference_data()
     create_test_data()
 

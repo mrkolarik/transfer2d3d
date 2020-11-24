@@ -63,28 +63,28 @@ def png_series_reader(dir):
     return V
 
 def evaluate_segmentation(ref_dir, pred_dir):
-    # print(png_series_reader(ref_dir).shape)
-    # # Calculate results for center 1
-    # dice, ravd, accuracy, specificity, sensitivity = evaluate(png_series_reader(ref_dir)[0:255], png_series_reader(pred_dir)[0:255])
-    # print("Calculated results for center 1:")
-    # # print('Calculated Accuracy score  :' + str(accuracy))
-    # print('Calculated DICE        ' + str(dice))
-    # print('Calculated Specificity ' + str(specificity))
-    # print('Calculated Sensitivity ' + str(sensitivity))
-    # # Calculate results for center 7
-    # dice, ravd, accuracy, specificity, sensitivity = evaluate(png_series_reader(ref_dir)[256:512], png_series_reader(pred_dir)[256:512])
-    # print("Calculated results for center 7:")
-    # # print('Calculated Accuracy score  :' + str(accuracy))
-    # print('Calculated DICE        ' + str(dice))
-    # print('Calculated Specificity ' + str(specificity))
-    # print('Calculated Sensitivity ' + str(sensitivity))
-    # # Calculate results for center 8
-    # dice, ravd, accuracy, specificity, sensitivity = evaluate(png_series_reader(ref_dir)[513:767], png_series_reader(pred_dir)[513:767])
-    # print("Calculated results for center 8:")
-    # # print('Calculated Accuracy score  :' + str(accuracy))
-    # print('Calculated DICE        ' + str(dice))
-    # print('Calculated Specificity ' + str(specificity))
-    # print('Calculated Sensitivity ' + str(sensitivity))
+    print(png_series_reader(ref_dir).shape)
+    # Calculate results for center 1
+    dice, ravd, accuracy, specificity, sensitivity = evaluate(png_series_reader(ref_dir)[0:255], png_series_reader(pred_dir)[0:255])
+    print("Calculated results for center 1:")
+    # print('Calculated Accuracy score  :' + str(accuracy))
+    print('Calculated DICE        ' + str(dice))
+    print('Calculated Specificity ' + str(specificity))
+    print('Calculated Sensitivity ' + str(sensitivity))
+    # Calculate results for center 7
+    dice, ravd, accuracy, specificity, sensitivity = evaluate(png_series_reader(ref_dir)[256:512], png_series_reader(pred_dir)[256:512])
+    print("Calculated results for center 7:")
+    # print('Calculated Accuracy score  :' + str(accuracy))
+    print('Calculated DICE        ' + str(dice))
+    print('Calculated Specificity ' + str(specificity))
+    print('Calculated Sensitivity ' + str(sensitivity))
+    # Calculate results for center 8
+    dice, ravd, accuracy, specificity, sensitivity = evaluate(png_series_reader(ref_dir)[513:767], png_series_reader(pred_dir)[513:767])
+    print("Calculated results for center 8:")
+    # print('Calculated Accuracy score  :' + str(accuracy))
+    print('Calculated DICE        ' + str(dice))
+    print('Calculated Specificity ' + str(specificity))
+    print('Calculated Sensitivity ' + str(sensitivity))
 
     dice, ravd, accuracy, specificity, sensitivity = evaluate(png_series_reader(ref_dir), png_series_reader(pred_dir))
     return dice, ravd, accuracy, specificity, sensitivity
