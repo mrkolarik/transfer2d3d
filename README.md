@@ -6,19 +6,6 @@ Hello everyone, this is a repository containing code to Paper "Planar 3D Transfe
 
 Most useful parts of this repository are python keras scripts with source code for generating planar 3D weights for 2D to 3D transfer learning.
 
-## Overview
-
-<p align="center">
-  <img width="300" src="img/planar3d.PNG"> <br>
-  <b>Figure_1:</b> Visualisation of 2D → Planar 3D convolutional kernel transformation
-</p>
-
-<p align="center">
-  <img width="800" src="img/architecture.PNG"> <br>
-  <b>Figure_2:</b> Architecture of the proposed planar 3D res-u-net with VGG-16 planar 3D encoder
-</p>
-
-
 ### Reproducing the paper results
 1.  Get the data - here is a link to subscribe to the MSSEG 16 challenge, data will be available after manual verification of your team by organizers:
 https://portal.fli-iam.irisa.fr/msseg-challenge/overview
@@ -123,6 +110,19 @@ Calculated Specificity 0.9994186303613052
 Calculated Sensitivity 0.624245195852427
 ------------------------------
 ```
+
+## Overview
+
+<p align="center">
+  <img width="300" src="img/planar3d.PNG"> <br>
+  <b>Figure_1:</b> Visualisation of 2D → Planar 3D convolutional kernel transformation
+</p>
+
+<p align="center">
+  <img width="800" src="img/architecture.PNG"> <br>
+  <b>Figure_2:</b> Architecture of the proposed planar 3D res-u-net with VGG-16 planar 3D encoder
+</p>
+
 ## How to use
 TODO
 
