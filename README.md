@@ -37,6 +37,7 @@ this command creates an Anaconda environment called "planar3d" and installs all 
 
 4) Divide the dataset to the training / test set by copying the folders from data/png/scans and data/png/masks to the corresponding folders data/train_scans - data/train_masks - data/test_scans - data/test_masks. The description of which scans were used as the test scans in each crossvalidation round can be found in the short acoompanying paper to our main ICPR publication. In the first round of crossvalidation the data was divided like this:
 
+```bash
 ./data/
 ├── ./test_masks
 │   ├── ./test_masks/01042GULE
@@ -72,6 +73,7 @@ this command creates an Anaconda environment called "planar3d" and installs all 
 │   ├── ./train_scans/08027SYBR
 │   ├── ./train_scans/08029IVDI
 │   └── ./train_scans/08031SEVE
+```
 
 5) Run the data_load.py to load the png files to numpy ready for neural network input.
 
@@ -83,6 +85,7 @@ and copy them to the ./weights directory
 
 8) Run the evaluate_predictions.py which should results in following output:
 
+```bash
 ------------------------------
 Evaluation results of experiment planar_cross_1 : 
 ------------------------------
@@ -104,7 +107,7 @@ Calculated DICE        0.6582231144377745
 Calculated Specificity 0.9994186303613052
 Calculated Sensitivity 0.624245195852427
 ------------------------------
-
+```
 
 ## Citation and references
 
