@@ -1,6 +1,5 @@
-# Planar 3D Transfer Learning
-## for End to End Unimodal MRI Unbalanced Data Segmentation
-## Utilizing 2D pre-trained weights in 3D segmentation with application on multiple sclerosis lesion segmentation
+## Planar 3D Transfer Learning for End to End Unimodal MRI Unbalanced Data Segmentation
+### Utilizing 2D pre-trained weights in 3D segmentation with application on multiple sclerosis lesion segmentation
 
 Hello everyone, this is a repository containing code to Paper "Planar 3D Transfer Learning for End to End Unimodal MRI Unbalanced Data Segmentation" soon to be published (accepted) to ICPR 2020. Pre-print Arxiv version here: https://arxiv.org/abs/2011.11557
 
@@ -44,15 +43,16 @@ This code instatiates the Res-U-Net Keras model and loads the Planar 3D VGG weig
 
 Please cite our work as:
 
-@article{kolarik2020planar,
-  title={Planar 3D Transfer Learning for End to End Unimodal MRI Unbalanced Data Segmentation},
-  author={Kolarik, Martin and Burget, Radim and Travieso-Gonzalez, Carlos M and Kocica, Jan},
-  journal={arXiv preprint arXiv:2011.11557},
-  year={2020}
+@article{kolarik2020planar,<br>
+&nbsp;   &nbsp;    title={Planar 3D Transfer Learning for End to End Unimodal MRI Unbalanced Data Segmentation},<br>
+&nbsp;   &nbsp;    author={Kolarik, Martin and Burget, Radim and Travieso-Gonzalez, Carlos M and Kocica, Jan},<br>
+&nbsp;   &nbsp;    journal={arXiv preprint arXiv:2011.11557},<br>
+&nbsp;   &nbsp;    year={2020}<br>
 }
 
 
-### Reproducing the paper results
+## Reproducing the paper results
+
 1.  Get the data - here is a link to subscribe to the MSSEG 16 challenge, data will be available after manual verification of your team by organizers:
 https://portal.fli-iam.irisa.fr/msseg-challenge/overview
 
