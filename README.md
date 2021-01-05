@@ -6,6 +6,52 @@ Hello everyone, this is a repository containing code to Paper "Planar 3D Transfe
 
 Most useful parts of this repository are python keras scripts with source code for generating planar 3D weights for 2D to 3D transfer learning.
 
+
+## Overview
+
+We present a novel approach of 2D to 3D transfer learning based on mapping pre-trained 2D convolutional neural network weights into planar 3D kernels.
+
+<p align="center">
+  <img width="300" src="img/planar3d.PNG"> <br>
+  <b>Figure_1:</b> Visualisation of 2D → Planar 3D convolutional kernel transformation
+</p>
+
+The method is validated by the proposed planar 3D res-u-net network with encoder transferred from the 2D VGG-16, which is applied for a single-stage unbalanced 3D image data segmentation.
+
+<p align="center">
+  <img width="800" src="img/architecture.PNG"> <br>
+  <b>Figure_2:</b> Architecture of the proposed planar 3D res-u-net with VGG-16 planar 3D encoder
+</p>
+
+
+## How to use
+There are two steps to use our implementation in your own project:
+
+1. Generate Planar 3D VGG weights by running this script - it will save Planar 3D VGG weights to the ./weights folder:
+```bash
+generate_weights.py
+```
+
+2. Then you can use our model Res-U-Net from the ./models/Unet_vgg with planar encoder in your Keras code as follows:
+```bash
+model = Unet_vgg.res_unet_vgg(image_depth=img_depth, image_rows=img_rows, image_cols=img_cols, train_encoder=False)
+model.load_weights('./weights/planar_3d_vgg.h5', by_name=True)
+```
+This code instatiates the Res-U-Net Keras model and loads the Planar 3D VGG weights by name (only the VGG encoder layers weights will be loaded and the rest remains randomly initialized).
+
+
+## Citation and references
+
+Please cite our work as:
+
+@article{kolarik2020planar,
+  title={Planar 3D Transfer Learning for End to End Unimodal MRI Unbalanced Data Segmentation},
+  author={Kolarik, Martin and Burget, Radim and Travieso-Gonzalez, Carlos M and Kocica, Jan},
+  journal={arXiv preprint arXiv:2011.11557},
+  year={2020}
+}
+
+
 ### Reproducing the paper results
 1.  Get the data - here is a link to subscribe to the MSSEG 16 challenge, data will be available after manual verification of your team by organizers:
 https://portal.fli-iam.irisa.fr/msseg-challenge/overview
@@ -15,17 +61,27 @@ https://portal.fli-iam.irisa.fr/msseg-challenge/overview
 ./msseg/Unprocessed training dataset/TrainingDataset_MSSEG/01016SACH/3DFLAIR.nii.gz
 ```
 
-3.  Run the script:
+3.  Create and activate the virtual Python conda environment:
+```bash
+conda create --name planar3d --file environment.txt
+conda activate planar3d
+```
+this command creates an Anaconda environment called "planar3d" and installs all the necessary packages. We were notified that conda has problems with installing the open-cv package. If this happens to you, you can install it via pip:
+```bash
+pip install opencv-python
+```
+
+4. Run the following script to generate the png processed dataset.:
 ```bash
 nifti_to_png.py
 ```
-to generate png processed dataset. The conda environment can be created by running: 
+ The conda environment can be created by running: 
 ```bash
 conda create --name planar3d --file environment.txt
 ```
 this command creates an Anaconda environment called "planar3d" and installs all the necessary packages. If there will be any packages missing, install them via pip and let us know, we will update the Readme.
 
-4.  Divide the dataset to the training / test set by copying the folders from data/png/scans and data/png/masks to the corresponding folders data/train_scans - data/train_masks - data/test_scans - data/test_masks. The description of which scans were used as the test scans in each crossvalidation round can be found in the short acoompanying paper to our main ICPR publication. In the first round of crossvalidation the data was divided like this:
+5.  Divide the dataset to the training / test set by copying the folders from data/png/scans and data/png/masks to the corresponding folders data/train_scans - data/train_masks - data/test_scans - data/test_masks. The description of which scans were used as the test scans in each crossvalidation round can be found in the short acoompanying paper to our main ICPR publication. In the first round of crossvalidation the data was divided like this:
 
 ```bash
 ./data/
@@ -65,23 +121,23 @@ this command creates an Anaconda environment called "planar3d" and installs all 
 │   └── ./train_scans/08031SEVE
 ```
 
-5.  Run the script: 
+6.  Run the script: 
 ```bash
 data_load.py 
 ```
 to load the png files to numpy ready for neural network input.
 
-6.  Download the weights from the 1st round of crossvalidation here:
+7.  Download the weights from the 1st round of crossvalidation here:
 https://drive.google.com/file/d/1Dq4Q6u0ghqAmiNcdFBvML7-fVzQMj2Hu/view?usp=sharing
 and copy them to the ./weights directory
 
-7.  Run the script:
+8.  Run the script:
 ```bash
 original_paper_reproduction.py
 ```
 to generate predictions
 
-8.  Run the script:
+9.  Run the script:
 ```bash
 evaluate_predictions.py
 ```
@@ -110,27 +166,3 @@ Calculated Specificity 0.9994186303613052
 Calculated Sensitivity 0.624245195852427
 ------------------------------
 ```
-
-## Overview
-
-<p align="center">
-  <img width="300" src="img/planar3d.PNG"> <br>
-  <b>Figure_1:</b> Visualisation of 2D → Planar 3D convolutional kernel transformation
-</p>
-
-<p align="center">
-  <img width="800" src="img/architecture.PNG"> <br>
-  <b>Figure_2:</b> Architecture of the proposed planar 3D res-u-net with VGG-16 planar 3D encoder
-</p>
-
-## How to use
-TODO
-
-### Applying on your own data
-TODO
-
-## Citation and references
-
-Please cite our work as:
-
-TO BE ADDED
